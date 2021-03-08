@@ -10,8 +10,6 @@ public class Biblioteka implements BibliotekaInterface {
 	//Head i druga verzija se razlikuju po komentarima i znakovima <<<<<<< i ======
 	private  List<Knjiga> knjige = new LinkedList<>();
 	
-	
-	//Nepotreban komentar
 	@Override
 	public void dodajKnjiga(Knjiga knjiga) {
 
