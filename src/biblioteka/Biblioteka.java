@@ -12,10 +12,12 @@ public class Biblioteka implements BibliotekaInterface {
 	
 	@Override
 	public void dodajKnjiga(Knjiga knjiga) {
+
 		if(knjiga==null)
 			throw new NullPointerException("NE sme biti null");
 		if(knjige.contains(knjiga))
 			throw new RuntimeException("Knjiga vec postoji");
+
 		knjige.add(knjiga);
 
 	}
@@ -29,8 +31,10 @@ public class Biblioteka implements BibliotekaInterface {
 
 	@Override
 	public LinkedList<Knjiga> pronadjiKnjigu(Autor autor, String isbn, String naslov, String izdavac) {
-		if(autor == null && isbn==null && naslov==null && izdavac == null)
-			return (LinkedList<Knjiga>) knjige;
+
+		if(autor == null && isbn==null && naslov==null && izdavac ==null)
+			throw new RuntimeException("Mora da se unese bar jedan kriterijum pretrage");
+
 		List<Knjiga> rezultat = new LinkedList<>();
 		for (Knjiga knjiga : knjige) {
 			if(knjiga.getNaslov().contains(naslov))
@@ -44,6 +48,8 @@ public class Biblioteka implements BibliotekaInterface {
 
 	@Override
 	public void obrisiKnjigu(Knjiga knjiga) {
+		if(knjiga==null || !knjige.contains(knjiga))
+			throw new RuntimeException("Knjiga ne sme biti null  i mora postojati u biblioteci");
 		knjige.remove(knjiga);
 		
 	}
