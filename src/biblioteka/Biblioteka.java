@@ -7,7 +7,7 @@ import biblioteka.inrterfejs.BibliotekaInterface;
 
 public class Biblioteka implements BibliotekaInterface {
 
-	
+	//Head i druga verzija se razlikuju po komentarima i znakovima <<<<<<< i ======
 	private  List<Knjiga> knjige = new LinkedList<>();
 	
 	@Override
